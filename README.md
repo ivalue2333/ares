@@ -1,2 +1,3 @@
-# unsafejson
 # ares
+
+一些快速使用的方法.
