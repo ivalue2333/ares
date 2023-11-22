@@ -1,15 +1,17 @@
-package ares
+package costs
 
 import (
 	"context"
 	"time"
+
+	"github.com/ivalue2333/ares"
 )
 
 // CostByName 计算耗时.
 func CostByName(ctx context.Context, name string) func() {
 	start := time.Now()
 	return func() {
-		Info("name:%s func_cost:%s", name, time.Since(start))
+		ares.Info("name:%s func_cost:%s", name, time.Since(start))
 	}
 }
 
@@ -17,6 +19,6 @@ func CostByName(ctx context.Context, name string) func() {
 func Cost(ctx context.Context) func() {
 	start := time.Now()
 	return func() {
-		Info("func_cost:%s", time.Since(start))
+		ares.Info("func_cost:%s", time.Since(start))
 	}
 }

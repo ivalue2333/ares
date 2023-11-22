@@ -1,7 +1,9 @@
-package ares
+package safego
 
 import (
 	"runtime/debug"
+
+	"github.com/ivalue2333/ares"
 )
 
 func SafeGo(do func(), recoverDo func(err interface{})) {
@@ -18,6 +20,6 @@ func SafeGo(do func(), recoverDo func(err interface{})) {
 
 func SafeGoFmt(do func()) {
 	SafeGo(do, func(err interface{}) {
-		Info("SafeGoFmt panic, err:%+v, stack:\n%s", err, string(debug.Stack()))
+		ares.Info("SafeGoFmt panic, err:%+v, stack:\n%s", err, string(debug.Stack()))
 	})
 }

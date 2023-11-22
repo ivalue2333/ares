@@ -1,4 +1,4 @@
-package ares
+package strs
 
 import "strconv"
 

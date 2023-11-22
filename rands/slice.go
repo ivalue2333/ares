@@ -1,4 +1,4 @@
-package ares
+package rands
 
 import "math/rand"
 

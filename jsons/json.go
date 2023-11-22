@@ -1,4 +1,4 @@
-package ares
+package jsons
 
 import (
 	"encoding/json"
@@ -13,8 +13,8 @@ func Marshal(v interface{}) []byte {
 	return data
 }
 
-// MarshalString marshals v into json string
-func MarshalString(v interface{}) string {
+// MarshalStr marshals v into json string
+func MarshalStr(v interface{}) string {
 	data, err := json.Marshal(v)
 	if err != nil {
 		return ""
@@ -27,7 +27,7 @@ func Unmarshal(data []byte, v interface{}) {
 	_ = json.Unmarshal(data, v)
 }
 
-// UnmarshalString unmarshal data string into v.
-func UnmarshalString(data string, v interface{}) {
+// UnmarshalStr unmarshal data string into v.
+func UnmarshalStr(data string, v interface{}) {
 	Unmarshal([]byte(data), v)
 }
